@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" fill="none">
+  <!-- Dark Background -->
+  <rect width="400" height="200" fill="#0D0D0F" rx="12"/>
+  
+  <!-- Logo centered -->
+  <g transform="translate(60, 50)">
+    <!-- Power O (the O in OPSYN) -->
+    <circle cx="32" cy="30" r="28" stroke="#FF6B00" stroke-width="5" fill="none"/>
+    <rect x="29.5" y="6" width="5" height="18" rx="2.5" fill="#FF6B00"/>
+    
+    <!-- PSYN Text -->
+    <text x="72" y="44" font-family="Outfit, sans-serif" font-weight="800" font-size="48" fill="#FFFFFF" letter-spacing="6">PSYN</text>
+    
+    <!-- Underline (spans OPSYN width only) -->
+    <rect x="0" y="66" width="280" height="5" rx="2.5" fill="#FF6B00"/>
+    
+    <!-- TECHNOLOGIES Text -->
+    <text x="0" y="92" font-family="Outfit, sans-serif" font-weight="500" font-size="16" fill="#888888" letter-spacing="4">TECHNOLOGIES</text>
+  </g>
+</svg>

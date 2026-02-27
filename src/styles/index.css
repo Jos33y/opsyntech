@@ -1,0 +1,59 @@
+/* ============================================
+   OPSYN Invoice System
+   Main CSS Entry Point
+   ============================================ 
+   
+   Architecture:
+   1. Variables   - Design tokens (colors, spacing, typography)
+   2. Reset       - CSS reset and normalization
+   3. Base        - Typography, links, animations
+   4. Utilities   - Helper classes (spacing, flex, grid)
+   5. Layout      - App shell (header, sidebar, mobile nav)
+   6. Components  - UI components (button, input, card, etc.)
+   7. Features    - Feature components (dashboard, invoice, client)
+   8. Pages       - Page-specific styles
+   
+   Total: 9 files (including this entry point)
+   ============================================ */
+
+/* Design Tokens */
+@import "./_variables.css";
+
+/* Reset & Normalize */
+@import "./_reset.css";
+
+/* Base Styles */
+@import "./_base.css";
+
+/* Utility Classes */
+@import "./_utilities.css";
+
+/* Layout System */
+@import "./_layout.css";
+
+/* UI Components */
+@import "./_components.css";
+
+/* Brand Logo */
+@import "./_brand.css";
+
+/* Feature Components */
+@import "./_features.css";
+
+/* Invoices (Pages, Cards, Form) */
+@import "./_invoices.css";
+
+/* Invoice Preview & Print */
+@import "./_invoice.css";
+
+/* Clients (Page, Cards, Form) */
+@import "./_clients.css";
+
+/* Landing/Hero Page */
+@import "./_landing.css";
+
+/* Settings Page */
+@import "./_settings.css";
+
+/* Page Styles */
+@import "./_pages.css";

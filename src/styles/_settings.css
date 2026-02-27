@@ -1,0 +1,218 @@
+/* ============================================
+   Settings Page - Premium (Matching Dashboard)
+   ============================================ */
+
+.settings-page {
+    animation: dashboardEnter 0.4s var(--ease-out);
+    max-width: 720px;
+}
+
+/* Page Header - Compact like dashboard */
+.settings-header {
+    margin-bottom: var(--space-6);
+}
+
+.settings-title {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+.settings-subtitle {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    margin-top: var(--space-1);
+}
+
+/* Sections Stack */
+.settings-sections {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+/* Section Card - Like stat-card with accent bar */
+.settings-card {
+    position: relative;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-muted);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: border-color var(--duration-fast) var(--ease-out),
+                transform var(--duration-fast) var(--ease-out);
+}
+
+.settings-card:hover {
+    border-color: var(--border-emphasis);
+}
+
+/* Left Accent Bar - Premium detail */
+.settings-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: var(--accent-color, var(--color-primary));
+}
+
+/* Accent Variants */
+.settings-card--primary { --accent-color: var(--color-primary); }
+.settings-card--success { --accent-color: var(--color-success); }
+.settings-card--warning { --accent-color: var(--color-warning); }
+.settings-card--muted { --accent-color: var(--neutral-600); }
+.settings-card--danger { --accent-color: var(--color-error); }
+
+/* Card Header - Compact */
+.settings-card__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-5);
+    padding-left: calc(var(--space-5) + 3px);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.settings-card__icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--icon-bg, var(--color-primary-subtle));
+    border-radius: var(--radius-md);
+    color: var(--icon-color, var(--color-primary));
+    flex-shrink: 0;
+}
+
+.settings-card__icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.settings-card--primary .settings-card__icon {
+    --icon-bg: var(--color-primary-subtle);
+    --icon-color: var(--color-primary);
+}
+
+.settings-card--success .settings-card__icon {
+    --icon-bg: var(--color-success-subtle);
+    --icon-color: var(--color-success);
+}
+
+.settings-card--warning .settings-card__icon {
+    --icon-bg: var(--color-warning-subtle);
+    --icon-color: var(--color-warning);
+}
+
+.settings-card--muted .settings-card__icon {
+    --icon-bg: var(--bg-elevated);
+    --icon-color: var(--text-muted);
+}
+
+.settings-card--danger .settings-card__icon {
+    --icon-bg: var(--color-error-subtle);
+    --icon-color: var(--color-error);
+}
+
+.settings-card__title {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+}
+
+.settings-card__desc {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 1px;
+}
+
+/* Card Body */
+.settings-card__body {
+    padding: var(--space-4) var(--space-5);
+    padding-left: calc(var(--space-5) + 3px);
+}
+
+/* Form Grid - Compact */
+.settings-form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+}
+
+@media (min-width: 540px) {
+    .settings-form-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.settings-form-grid--full {
+    grid-column: 1 / -1;
+}
+
+/* Hint Text */
+.settings-hint {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: var(--space-1);
+    padding: var(--space-2) var(--space-3);
+    background-color: var(--bg-body);
+    border-radius: var(--radius-md);
+    border-left: 2px solid var(--accent-color, var(--color-primary));
+}
+
+.settings-hint svg {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    opacity: 0.6;
+}
+
+/* Card Footer - Save Actions */
+.settings-card__footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: var(--space-3) var(--space-5);
+    padding-left: calc(var(--space-5) + 3px);
+    background-color: var(--bg-body);
+    border-top: 1px solid var(--border-subtle);
+}
+
+/* Danger Card */
+.settings-card--danger {
+    border-color: rgba(239, 68, 68, 0.15);
+}
+
+.settings-card--danger:hover {
+    border-color: rgba(239, 68, 68, 0.25);
+}
+
+.settings-card--danger .settings-card__body {
+    padding-top: var(--space-3);
+    padding-bottom: var(--space-4);
+}
+
+/* Responsive */
+@media (max-width: 639px) {
+    .settings-card__header {
+        padding: var(--space-3) var(--space-4);
+        padding-left: calc(var(--space-4) + 3px);
+    }
+    
+    .settings-card__body {
+        padding: var(--space-3) var(--space-4);
+        padding-left: calc(var(--space-4) + 3px);
+    }
+    
+    .settings-card__footer {
+        padding: var(--space-3) var(--space-4);
+        padding-left: calc(var(--space-4) + 3px);
+    }
+}

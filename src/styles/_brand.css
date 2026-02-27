@@ -1,0 +1,54 @@
+/* ============================================
+   BRAND LOGO - OPSYN Technologies
+   Power-O + PSYN + Underline + TECHNOLOGIES
+   Always left-aligned, underline spans full width
+   ============================================ */
+
+.brand-logo {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.brand-logo__main {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.brand-logo__power-o {
+    position: relative;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+.brand-logo__power-bar {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-primary);
+    border-radius: 2px;
+}
+
+.brand-logo__text {
+    font-family: var(--font-display);
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1;
+}
+
+.brand-logo__underline {
+    width: 100%;
+    background-color: var(--color-primary);
+    border-radius: 2px;
+}
+
+.brand-logo__tagline {
+    font-family: var(--font-display);
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    line-height: 1;
+}

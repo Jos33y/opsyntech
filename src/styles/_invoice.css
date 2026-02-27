@@ -1,0 +1,754 @@
+/* ============================================
+   PREMIUM INVOICE STYLES
+   Professional, Print-Ready Design
+   ============================================ */
+
+/* Invoice Container */
+.inv {
+    background: white;
+    color: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+    margin-bottom: var(--space-6);
+}
+
+/* ----------------------------------------
+   INVOICE HEADER - Dark with Brand Logo
+   ---------------------------------------- */
+.inv__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 32px;
+    background: #1a1a1a;
+    color: white;
+}
+
+.inv__header-brand {
+    display: flex;
+    align-items: center;
+}
+
+/* Brand Logo - Matches OPSYN brand guidelines exactly */
+.inv__brand-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.inv__brand-main {
+    display: flex;
+    align-items: center;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: 23px;
+    letter-spacing: 6px;
+    color: white;
+    line-height: 1;
+}
+
+/* Power-O Symbol - matches SVG proportions */
+.inv__power-o {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 27px;
+    height: 27px;
+    border: 3px solid #FF6B00;
+    border-radius: 50%;
+    position: relative;
+    margin-right: 4px;
+    flex-shrink: 0;
+}
+
+.inv__power-o::before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 10px;
+    background: #FF6B00;
+    border-radius: 2px;
+    top: 3px;
+}
+
+.inv__brand-text {
+    color: white;
+}
+
+/* Orange Underline - explicit width to ensure visibility */
+.inv__brand-underline {
+    display: block;
+    width: 125px;
+    height: 4px;
+    background-color: #FF6B00;
+    border-radius: 2px;
+    margin-top: 6px;
+}
+
+/* Technologies tagline - normal text below */
+.inv__brand-tagline {
+    display: block;
+    font-family: 'Outfit', sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #888888;
+    text-transform: uppercase;
+    margin-top: 6px;
+}
+
+.inv__header-title {
+    text-align: right;
+}
+
+.inv__label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 4px;
+}
+
+.inv__number {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: white;
+}
+
+/* ----------------------------------------
+   STATUS & AMOUNT BAR
+   ---------------------------------------- */
+.inv__bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 32px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.inv__bar-left {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.inv__bar-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.inv__bar-label {
+    font-size: 9px;
+    font-weight: 600;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.inv__bar-value {
+    font-size: 13px;
+    font-weight: 500;
+    color: #1a1a1a;
+}
+
+.inv__bar-value--due {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.inv__bar-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.inv__amount {
+    font-size: 28px;
+    font-weight: 600;
+    color: #FF6B00;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+}
+
+/* Status Badges */
+.inv__status {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-radius: 4px;
+}
+
+.inv__status--draft {
+    background: #e9ecef;
+    color: #495057;
+}
+
+.inv__status--pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.inv__status--paid {
+    background: #d4edda;
+    color: #155724;
+}
+
+.inv__status--overdue {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.inv__status--cancelled {
+    background: #e9ecef;
+    color: #6c757d;
+}
+
+/* ----------------------------------------
+   PARTIES (FROM / BILL TO)
+   ---------------------------------------- */
+.inv__parties {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    padding: 24px 32px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.inv__party-label {
+    font-size: 9px;
+    font-weight: 600;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+}
+
+.inv__party-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+}
+
+.inv__party-info {
+    font-size: 12px;
+    color: #495057;
+    line-height: 1.65;
+}
+
+/* ----------------------------------------
+   ITEMS TABLE
+   ---------------------------------------- */
+.inv__table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.inv__th {
+    padding: 10px 16px;
+    font-size: 9px;
+    font-weight: 600;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: left;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.inv__th--qty,
+.inv__th--rate,
+.inv__th--amount {
+    text-align: right;
+    width: 80px;
+}
+
+.inv__th--desc {
+    padding-left: 32px;
+}
+
+.inv__th--amount {
+    padding-right: 32px;
+    width: 100px;
+}
+
+.inv__td {
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #333;
+    border-bottom: 1px solid #e9ecef;
+    vertical-align: top;
+}
+
+.inv__td--desc {
+    padding-left: 32px;
+    font-weight: 500;
+    color: #1a1a1a;
+}
+
+.inv__td--qty,
+.inv__td--rate,
+.inv__td--amount {
+    text-align: right;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+    font-size: 12px;
+}
+
+.inv__td--amount {
+    padding-right: 32px;
+    font-weight: 500;
+    color: #1a1a1a;
+}
+
+.inv__td--empty {
+    text-align: center;
+    padding: 28px;
+    color: #adb5bd;
+}
+
+/* ----------------------------------------
+   TOTALS
+   ---------------------------------------- */
+.inv__totals {
+    display: flex;
+    justify-content: flex-end;
+    padding: 18px 32px;
+    background: #f8f9fa;
+}
+
+.inv__totals-box {
+    min-width: 240px;
+}
+
+.inv__totals-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    font-size: 13px;
+    color: #495057;
+}
+
+.inv__totals-row span:last-child {
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    color: #333;
+}
+
+.inv__totals-row--total {
+    margin-top: 10px;
+    padding-top: 12px;
+    border-top: 2px solid #dee2e6;
+}
+
+.inv__totals-row--total span:first-child {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.inv__totals-row--total span:last-child {
+    font-size: 18px;
+    font-weight: 600;
+    color: #FF6B00;
+}
+
+/* ----------------------------------------
+   PAYMENT INFORMATION
+   ---------------------------------------- */
+.inv__payment {
+    margin: 20px 32px;
+    border: 2px solid #FF6B00;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.inv__payment-header {
+    font-size: 10px;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 10px 16px;
+    background: #FF6B00;
+}
+
+.inv__payment-body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 16px;
+    background: #fff8f3;
+    gap: 12px;
+}
+
+.inv__payment-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.inv__payment-label {
+    font-size: 9px;
+    font-weight: 600;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.inv__payment-value {
+    font-size: 13px;
+    font-weight: 500;
+    color: #1a1a1a;
+}
+
+.inv__payment-value--highlight {
+    font-size: 15px;
+    font-weight: 700;
+    color: #FF6B00;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+    letter-spacing: 0.05em;
+}
+
+/* ----------------------------------------
+   NOTES
+   ---------------------------------------- */
+.inv__notes {
+    margin: 0 32px 20px;
+    padding: 14px 16px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    border-left: 3px solid #dee2e6;
+}
+
+.inv__notes-header {
+    font-size: 9px;
+    font-weight: 600;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+}
+
+.inv__notes-body {
+    font-size: 13px;
+    color: #495057;
+    line-height: 1.6;
+}
+
+/* ----------------------------------------
+   FOOTER
+   ---------------------------------------- */
+.inv__footer {
+    padding: 18px 32px;
+    text-align: center;
+    border-top: 1px solid #e9ecef;
+    background: #f8f9fa;
+}
+
+.inv__footer-message {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.inv__footer-brand {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Outfit', sans-serif;
+}
+
+.inv__footer-text {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #495057;
+}
+
+.inv__footer-tagline {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0;
+    margin-left: 3px;
+    color: #6c757d;
+}
+
+/* Footer Power-O */
+.inv__footer-power-o {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #FF6B00;
+    border-radius: 50%;
+    position: relative;
+    flex-shrink: 0;
+    margin-right: 1px;
+}
+
+.inv__footer-power-o::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 5px;
+    background: #FF6B00;
+    border-radius: 1px;
+    top: 2px;
+}
+
+/* ----------------------------------------
+   RESPONSIVE
+   ---------------------------------------- */
+@media (max-width: 768px) {
+    .inv__header {
+        flex-direction: column;
+        gap: 14px;
+        padding: 20px;
+        align-items: flex-start;
+    }
+    
+    .inv__brand-main {
+        font-size: 17px;
+        letter-spacing: 4px;
+    }
+    
+    .inv__power-o {
+        width: 19px;
+        height: 19px;
+        border-width: 2px;
+        margin-right: 3px;
+    }
+    
+    .inv__power-o::before {
+        width: 2px;
+        height: 7px;
+        top: 2px;
+    }
+    
+    .inv__brand-underline {
+        height: 3px;
+        width: 95px;
+        margin-top: 4px;
+    }
+    
+    .inv__brand-tagline {
+        font-size: 7px;
+        letter-spacing: 1.5px;
+        margin-top: 4px;
+    }
+    
+    .inv__header-title {
+        text-align: left;
+    }
+    
+    .inv__bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 16px 20px;
+    }
+    
+    .inv__bar-left {
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+    
+    .inv__bar-right {
+        align-items: flex-start;
+    }
+    
+    .inv__amount {
+        font-size: 24px;
+    }
+    
+    .inv__parties {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 16px 20px;
+    }
+    
+    .inv__th--desc,
+    .inv__td--desc {
+        padding-left: 16px;
+    }
+    
+    .inv__th--amount,
+    .inv__td--amount {
+        padding-right: 16px;
+    }
+    
+    .inv__totals {
+        padding: 14px 20px;
+    }
+    
+    .inv__payment {
+        margin: 16px 20px;
+    }
+    
+    .inv__payment-body {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .inv__notes {
+        margin: 0 20px 16px;
+    }
+    
+    .inv__footer {
+        padding: 14px 20px;
+    }
+}
+
+/* ----------------------------------------
+   PRINT STYLES
+   ---------------------------------------- */
+@media print {
+    @page {
+        size: A4;
+        margin: 12mm;
+    }
+    
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    body {
+        background: white !important;
+    }
+    
+    /* Hide everything except invoice */
+    .sidebar,
+    .layout-sidebar,
+    .header,
+    .layout-header,
+    .mobile-nav,
+    .invoice-detail__header,
+    .invoice-detail__status-actions,
+    .no-print {
+        display: none !important;
+    }
+    
+    .layout,
+    .layout-main,
+    .layout-content,
+    .invoice-detail {
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        background: white !important;
+    }
+    
+    /* Invoice print styling */
+    .inv {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        border: 1px solid #e9ecef !important;
+    }
+    
+    /* Dark header prints well */
+    .inv__header {
+        background: #1a1a1a !important;
+    }
+    
+    .inv__brand-main {
+        color: white !important;
+    }
+    
+    .inv__brand-text {
+        color: white !important;
+    }
+    
+    .inv__power-o {
+        border-color: #FF6B00 !important;
+    }
+    
+    .inv__power-o::before {
+        background: #FF6B00 !important;
+    }
+    
+    .inv__brand-underline {
+        display: block !important;
+        background-color: #FF6B00 !important;
+        height: 4px !important;
+        width: 125px !important;
+    }
+    
+    .inv__brand-tagline {
+        display: block !important;
+        color: #888888 !important;
+    }
+    
+    .inv__label {
+        color: rgba(255, 255, 255, 0.6) !important;
+    }
+    
+    .inv__number {
+        color: white !important;
+    }
+    
+    .inv__bar,
+    .inv__th,
+    .inv__totals,
+    .inv__footer {
+        background: #f8f9fa !important;
+    }
+    
+    .inv__status--draft { background: #e9ecef !important; }
+    .inv__status--pending { background: #fff3cd !important; }
+    .inv__status--paid { background: #d4edda !important; }
+    .inv__status--overdue { background: #f8d7da !important; }
+    
+    .inv__amount,
+    .inv__totals-row--total span:last-child,
+    .inv__payment-value--highlight {
+        color: #FF6B00 !important;
+    }
+    
+    .inv__payment {
+        border-color: #FF6B00 !important;
+    }
+    
+    .inv__payment-header {
+        background: #FF6B00 !important;
+        color: white !important;
+    }
+    
+    .inv__payment-body {
+        background: #fff8f3 !important;
+    }
+    
+    .inv__notes {
+        background: #f8f9fa !important;
+        border-left-color: #dee2e6 !important;
+    }
+    
+    .inv__footer-power-o {
+        border-color: #FF6B00 !important;
+    }
+    
+    .inv__footer-power-o::before {
+        background: #FF6B00 !important;
+    }
+    
+    .inv__footer-text {
+        color: #495057 !important;
+    }
+    
+    .inv__footer-tagline {
+        color: #6c757d !important;
+    }
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#0A0A0C" />
+  <meta name="description"
+    content="OPSYN Technologies - Automobile and Electronics Sales, Installations & Maintenance. Quality Service Delivery Guaranteed." />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>OPSYN Technologies | Automobile & Electronics Specialists</title>
+
+  <!-- Initial Loader Styles (inline to prevent FOUC) -->
+  <style>
+    :root {
+      --loader-bg: #0A0A0C;
+      --loader-primary: #FF6B00;
+      --loader-text: #F5F5F7;
+      --loader-muted: #6B6B6B;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--loader-bg);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    /* Initial App Loader */
+    #initial-loader {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--loader-bg);
+      z-index: 9999;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    #initial-loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    /* Logo Animation */
+    .initial-loader__logo {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 24px;
+      animation: logoPulse 2s ease-in-out infinite;
+    }
+
+    .initial-loader__logo-circle {
+      fill: none;
+      stroke: var(--loader-primary);
+      stroke-width: 2.5;
+      stroke-dasharray: 75;
+      stroke-dashoffset: 75;
+      animation: logoCircle 1.5s ease-out forwards;
+      transform-origin: center;
+    }
+
+    .initial-loader__logo-bar {
+      fill: var(--loader-primary);
+      opacity: 0;
+      animation: logoBar 0.4s ease-out 0.8s forwards;
+    }
+
+    @keyframes logoCircle {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes logoBar {
+      from {
+        opacity: 0;
+        transform: translateY(-4px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes logoPulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    /* Progress Bar */
+    .initial-loader__progress {
+      width: 120px;
+      height: 3px;
+      background-color: rgba(255, 107, 0, 0.15);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    .initial-loader__progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--loader-primary), #FF9500);
+      border-radius: 3px;
+      animation: progressLoad 1.8s ease-in-out infinite;
+    }
+
+    @keyframes progressLoad {
+      0% {
+        width: 0%;
+        margin-left: 0%;
+      }
+
+      50% {
+        width: 60%;
+        margin-left: 20%;
+      }
+
+      100% {
+        width: 0%;
+        margin-left: 100%;
+      }
+    }
+
+    /* Brand Text */
+    .initial-loader__brand {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      color: var(--loader-muted);
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Initial Loader (shown before React mounts) -->
+  <div id="initial-loader">
+    <svg class="initial-loader__logo" viewBox="0 0 64 64">
+      <circle class="initial-loader__logo-circle" cx="32" cy="32" r="24" />
+      <rect class="initial-loader__logo-bar" x="29" y="14" width="6" height="16" rx="3" />
+    </svg>
+    <div class="initial-loader__progress">
+      <div class="initial-loader__progress-bar"></div>
+    </div>
+    <span class="initial-loader__brand">OPSYN Technologies</span>
+  </div>
+
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+
+  <!-- Hide initial loader once React mounts -->
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      // Give React a moment to mount, then fade out
+      setTimeout(function () {
+        var loader = document.getElementById('initial-loader');
+        if (loader) {
+          loader.classList.add('hidden');
+          // Remove from DOM after transition
+          setTimeout(function () {
+            loader.remove();
+          }, 1000);
+        }
+      }, 1200);
+    });
+  </script>
+</body>
+
+</html>
